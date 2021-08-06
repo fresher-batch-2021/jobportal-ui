@@ -4,7 +4,7 @@
   }
   
   body {
-      background-color: rgb(92, 195, 243);
+      background-color: rgb(24, 45, 54);
       color:white;
     font-family: 'Muli', sans-serif;
     display: flex;
@@ -15,7 +15,7 @@
     margin: 0;
   }
   .container{
-      background-color: rgb(31, 29, 161);
+      background-color: rgb(41, 148, 180);
       padding: 20px 40px;
       border-radius: 5px;
   }

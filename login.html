@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Form Input</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Please login</h1>
-        <form>
+        <form onsubmit="login()">
             <div class="form control">
-                    <label>Email</label>
-                <input type="text" required>
-                
+                <label>Email</label>
+                <input type="text" name="email"  id="email"  required>
+
             </div>
             <div class="form control">
-                    <label>Password</label>
-                <input type="password" required>
-               
+                <label>Password</label>
+                <input type="password" name="password" id="password"required>
+
             </div>
-               <button class="btn">Login</button>
-               <p class="text">Don't have an account ?<a href="register.html">Register</a></p>
-               <a href="http://127.0.0.1:5500/index.html">Back</a>
+            <button class="btn">Login</button>
+            <p class="text">Don't have an account ?<a href="register.html">Register</a></p>
+            <a href="index.html">Back</a>
         </form>
     </div>
     <script src="script.js"></script>
+    <script>
+        // $("#header").load("header.html");
+
+        function login() {
+            event.preventDefault();
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+           
+            console.log(email + " " + password );
+            let userobj = {
+                "email": email,
+                "password": password,
+               
+
+            }
+            console.log(userobj);
+            alert("login Successfully");
+            window.location.href = "index.html";
+            
+       
+    }
+    </script>
 </body>
+
 </html>

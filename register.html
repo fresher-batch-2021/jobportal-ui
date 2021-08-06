@@ -1,32 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="register.css">
     <title>Form Input</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Register</h1>
-        <form> 
+        <form onsubmit="Register()">
             <div class="form control">
                 <label for="email">Email</label>
-                <input type="text"  id="email" required>
+                <input type="text" name="email" id="email" required>
             </div>
             <div class="form control">
                 <label for="password">Password</label>
-                <input type="password" id="password" required>
+                <input type="password" name="password" id="password" required>
             </div>
             <div class="form control">
-                 <label for="confirmpassword">Confirm Password</label>
-                <input type="confirm password" id="confirmpassword"required>
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="confirm password" name="confirmpassword" id="confirmpassword" required>
             </div>
-               <button class="btn">Register</button>
-               <a href="http://127.0.0.1:5500/login.html">Back</a>
+            <button class="btn">Register</button>
+            <a href="login.html">Back</a>
         </form>
     </div>
     <script src="script.js"></script>
-   
+    <script>
+        // $("#header").load("header.html");
+
+        function Register() {
+            event.preventDefault();
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+            const confirmpassword = document.querySelector("#confirmpassword").value;
+            console.log(email + " " + password + "" + confirmpassword);
+            let userobj = {
+                "email": email,
+                "password": password,
+                "confirm password": confirmpassword
+
+            }
+            console.log(userobj);
+            if(password == ""|| password == null ||password.trim()== ""){
+                alert("invalid password");
+            }
+            else{
+            if(password.length>=4)
+            {
+            alert("Registeration Successfully");
+            window.location.href = "login.html";
+            }
+            else{
+                alert("invalid password");
+            }
+            }
+            
+       
+    }
+    </script>
+
 </body>
+
 </html>
