@@ -25,6 +25,8 @@
             <button class="btn">Login</button>
             <p class="text">Don't have an account ?<a href="register.html">Register</a></p>
             <a href="index.html">Back</a>
+            <h2>Note:email nivi@gmail.com</h2>
+            <p>Password:123456</p>
         </form>
     </div>
     <script src="script.js"></script>
@@ -44,8 +46,14 @@
 
             }
             console.log(userobj);
+            if(email =="nivi@gmail.com" && password =="123456")
+            {
             alert("login Successfully");
             window.location.href = "index.html";
+            }
+            else{
+                alert("invalid user");
+            }
             
        
     }
