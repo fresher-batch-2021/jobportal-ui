@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="register.css">
-    <title>Form Input</title>
+    <title>Register</title>
 </head>
 
 <body>
@@ -13,18 +13,18 @@
         <h1>Register</h1>
         <form onsubmit="Register()">
             <div class="form control">
-                <label for="email">Email</label>
+                <label for="email">Email</label><br>
                 <input type="text" name="email" id="email" required>
             </div>
             <div class="form control">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
+                <label for="Password">Password</label><br>
+                <input type="password" name="password" id="password"required>
             </div>
             <div class="form control">
-                <label for="confirmpassword">Confirm Password</label>
-                <input type="confirm password" name="confirmpassword" id="confirmpassword" required>
+                <label for="confirmpassword">Confirm Password</label><br>
+                <input type="password" name="confirmpassword" id="confirmpassword" required>
             </div>
-            <button class="btn">Register</button>
+            <button class="btn">Register</button><br>   
             <a href="login.html">Back</a>
         </form>
     </div>
@@ -45,7 +45,7 @@
 
             }
             console.log(userobj);
-            if(password == ""|| password == null ||password.trim()== ""){
+            if(password == ""|| password == null ||password.trim()== "" ||password != confirmpassword){
                 alert("invalid password");
             }
             else{
