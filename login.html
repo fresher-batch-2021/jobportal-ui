@@ -9,26 +9,18 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Please login</h1>
-        <form onsubmit="login()">
-            <div class="form control">
-                <label>Email</label><br>
-                <input type="text" name="email"  id="email"  required>
-
-            </div>
-            <div class="form control">
-                <label>Password</label><br>
-                <input type="password" name="password" id="password"required>
-
-            </div>
-            <button class="btn">Login</button>
-            <p class="text">Don't have an account ?<a href="register.html">Register</a></p>
-            <a href="index.html">Back</a>
-            <h2>Note:email nivi@gmail.com</h2>
-            <p>Password:123456</p>
-        </form>
-    </div>
+    <form onsubmit="login()">
+    <div class="form-box">
+		<div class="header-text">
+			Login Form
+		</div><input placeholder="Your Email Address" type="text" id="email"> 
+        <input placeholder="Your Password" type="password" id="password"> 
+        <input id="terms" type="checkbox"> 
+        <label for="terms"></label>
+        <span>Agree with <a href="#">Terms & Conditions</a></span> 
+        <button>login</button><p>Don't have an account ?<a href="register.html">Register</a></p>
+	</div>
+   </form>
     <script src="script.js"></script>
     <script>
         // $("#header").load("header.html");

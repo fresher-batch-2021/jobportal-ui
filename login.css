@@ -1,70 +1,100 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-      background-color: rgb(24, 45, 54);
-      color:white;
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-  .container{
-      background-color: rgb(41, 148, 180) ;
-      padding: 20px 40px;
-      border-radius: 5px;
-  }
-  .container h1{
-      text-align:center;
-      margin-bottom: 30px;
-  }
-.container a{
-text-decoration: none;
-color: lightskyblue;
+	box-sizing: border-box;
 }
-.btn{
-    cursor: pointer;
-    display:inline-block;
-    width:30%;
-    background: rgb(117, 189, 212);
-    padding: 11px;
-    font-family: inherit;
-    font-size: 16px;
-    border: 0;
-    border-radius: 2px;
-    outline: 0;
+body {
+	font-family: poppins;
+	font-size: 16px;
+	color: #fff;
 }
-
-.btn:active{
-    transform: scale(0.98);
+.form-box {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: auto auto;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 500px;
+	height: 430px;
 }
-.text{
-    margin-top: 30px;
+.form-box:before {
+	background-image: url("https://i.postimg.cc/8cnYLpfc/ddddd.jpg");
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
 }
-.form-control{
-    position: relative;
-    margin: 20px 0 40px;
-    width: 300px;
+.form-box .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	text-align: center;
 }
-.form-control input{
-    background-color: transparent;
-    border: 0;
-    border-bottom: 2px #fff solid;
-    display: block;
-    width:100%;
-    padding: 15px 0;
-    font-size: 18px;
-    color: #fff;
+.form-box input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 18px;
+	font-family: poppins;
 }
-.form-control input:focus,
-.form-control input:valid{
-    outline: 0;
-
+.form-box input[type=checkbox] {
+	display: none;
 }
-
-  
+.form-box label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form-box label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: #ddd;
+}
+.form-box input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+}
+.form-box span {
+	font-size: 14px;
+}
+.form-box button {
+	background-color: deepskyblue;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+span a {
+	color: #BBB;
+}
