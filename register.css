@@ -37,11 +37,10 @@ color: lightskyblue;
     font-size: 16px;
     border: 0;
     border-radius: 5px;
-}
-
-.btn{
     outline: 0;
 }
+
+
 .btn:active{
     transform: scale(0.98);
 }
