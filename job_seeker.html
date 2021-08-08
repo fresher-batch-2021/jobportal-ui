@@ -9,45 +9,25 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Please enter the details</h1>
-        <form onsubmit="jobseeker()">
-            <div class="form control">
-                <label>Enter the name</label><br>
-                <input type="text" nmae="name" id="name" required>
-            </div>
-            <div class="form control">
-                <label>KeySkills</label><br>
-                <input type="text" name="keyskills" id="keyskills" required>
-            </div>
-            <div class="form control">
-                <label>Education</label><br>
-                <input type="text" name="education" id="education" required>
-            </div>
-            <div class="form control">
-                <label>ResumeHeadline</label><br>
-                <input type="text" name="resume" id="resume" required>
-            </div>
-            <div class="form control">
-                <label>Projects</label><br>
-                <input type="text" name="projects" id="projects" idrequired>
-            </div>
-            <div class="form control">
-                <label>CollegeName</label><br>
-                <input type="text" name="collegename" id="collegename" required>
-            </div>
-            <div class="form control">
-                <label>Date_of_Birth</label><br>
-                <input type="date" name="date_of_birth" id="date_of_birth" required>
-            </div>
-            <div class="form control">
-                <label>Mobile_No</label><br>
-                <input type="number" name="mobile_no" id="mobile_no" required>
-            </div>
-            <button class="btn">Submit</button>
-            <a href="index.html">Back</a>
-        </form>
-    </div>
+    <form onsubmit="jobseeker()">
+        <div class="form-box">
+            <div class="header-text">
+                JobSeeker Details
+            </div><input placeholder="Your Name" type="text" id="name"> 
+            <input placeholder="keyskills" type="text" id="keyskills"> 
+            <input placeholder="Projects" type="text" id="projects"> 
+            <input placeholder="Education" type="text" id="education"> 
+            <input placeholder="ResumeHeadline" type="text" id="resume">
+            <input placeholder="collegename" type="text" id="collegename"> 
+            <input placeholder="DateofBirth" type="date" id="dateofbirth"> 
+            <input placeholder="MobileNo" type="text" id="mobileno"> 
+             
+            <input id="terms" type="checkbox"> 
+            <label for="terms"></label>
+            <span>Agree with <a href="#">Terms & Conditions</a></span> 
+            <button>Submit</button><a style="color: white;" href="index.html">back</a></p>
+        </div>
+    </form>
     <script>
         // $("#header").load("header.html");
 
@@ -55,29 +35,28 @@
             event.preventDefault();
             const name = document.querySelector("#name").value;
             const keyskills = document.querySelector("#keyskills").value;
+            const projects = document.querySelector("#projects").value;
             const education = document.querySelector("#education").value;
             const resume = document.querySelector("#resume").value;
-            const projects = document.querySelector("#projects").value;
             const collegename = document.querySelector("#collegename").value;
-            const dob = document.querySelector("#date_of_birth").value;
-            const mobileno = document.querySelector("#mobile_no").value;
+            const dob = document.querySelector("#dateofbirth").value;
+            const mobileno = document.querySelector("#mobileno").value;
 
-            console.log(name + " " + keyskills + "" + education + "" + resume + "" + projects + "" + collegename + "" + dob + "" + mobileno);
+            console.log(name + " " + keyskills + "" + projects + "" + education + "" + resume + "" + collegename + "" + dob + "" + mobileno);
             let userobj = {
-                "Name": name,
+                "name": name,
                 "keyskills": keyskills,
-                "Education": education,
-                "Resume": resume,
-                "Projects": projects,
-                "Experience": collegename,
-                "Date_of_birth": dob,
-                "Mobile_no": mobileno
+                "projects": projects,
+                "education": education,
+                "resume": resume,
+                "experience": collegename,
+                "date_of_birth": dob,
+                "mobile_no": mobileno
 
             }
             console.log(userobj);
-            alert("Your Response save Successfully");
+            alert("Your Response saved Successfully");
             window.location.href = "index.html";
-
         }
     </script>
 </body>

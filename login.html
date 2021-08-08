@@ -10,46 +10,22 @@
 
 <body>
     <form onsubmit="login()">
-    <div class="form-box">
-		<div class="header-text">
-			Login Form
-		</div><input placeholder="Your Email Address" type="text" id="email"> 
-        <input placeholder="Your Password" type="password" id="password"> 
-        <input id="terms" type="checkbox"> 
-        <label for="terms"></label>
-        <span>Agree with <a href="#">Terms & Conditions</a></span> 
-        <button>login</button><p>Don't have an account ?<a href="register.html">Register</a></p>
-	</div>
-   </form>
+        <div class="form-box">
+            <div class="header-text">
+                Login Form
+            </div><input placeholder="Your Email Address" type="text" id="email">
+            <input placeholder="Your Password" type="password" id="password">
+            <input id="terms" type="checkbox">
+            <label for="terms"></label>
+            <span>Agree with <a href="#">Terms & Conditions</a></span>
+            <button>login</button>
+            <p>Don't have an account ?<a href="register.html">Register</a></p>
+        </div>
+    </form>
     <script src="script.js"></script>
-    <script>
-        // $("#header").load("header.html");
+    <script src="login.js"></script>
 
-        function login() {
-            event.preventDefault();
-            const email = document.querySelector("#email").value;
-            const password = document.querySelector("#password").value;
-           
-            console.log(email + " " + password );
-            let userobj = {
-                "email": email,
-                "password": password,
-               
 
-            }
-            console.log(userobj);
-            if(email =="nivi@gmail.com" && password =="123456")
-            {
-            alert("login Successfully");
-            window.location.href = "index.html";
-            }
-            else{
-                alert("invalid user");
-            }
-            
-       
-    }
-    </script>
 </body>
 
 </html>
