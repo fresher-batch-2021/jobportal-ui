@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: poppins;
+	font-family:Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #fff;
 }
@@ -48,7 +48,7 @@ body {
 	border-radius: 5px;
 	width: 100%;
 	font-size: 18px;
-	font-family: poppins;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .form-box input[type=checkbox] {
 	display: none;
