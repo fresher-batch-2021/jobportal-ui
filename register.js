@@ -1,5 +1,6 @@
 function register() {
     event.preventDefault();
+    const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     const confirmpassword = document.querySelector("#confirmpassword").value;
@@ -8,23 +9,24 @@ function register() {
        alert("invalid name");
    }
    if(password.length<6){
-       alert("password is short");
+       alert("password must must be 6 character");
    }
    else 
    if(password != confirmpassword){
-       alert("password does not match");
+       alert("password does not match with confirmpassword");
    }
    else{
-       let rejisterObj={
+       let registerObj={
+           "name":name,
            "email":email,
            "password":password,
            "confirmpassword":confirmpassword
        };
-       console.log(rejisterObj);
+       console.log(registerObj);
        const url="https://product-mock-api.herokuapp.com/jobportalapp/api/v1/auth/register"
-       axios.post(url,rejisterObj).then(res=>{
+       axios.post(url,registerObj).then(res=>{
            console.log(res);
-           alert("Registeration is succesful");
+           alert("Registeration is successful");
            window.location.href="login.html";
        }).catch(err=>{
            console.error(err);
