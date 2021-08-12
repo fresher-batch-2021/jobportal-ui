@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="search.css">
-
     <title>Document</title>
+    <link rel="stylesheet" href="search.css">
 </head>
 <body>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-<ul id="myUL">
-  
-              <div class="containers">
-                  
-                
-              </div>
-          </div>
-  
-  <li><a href="https://www.tcs.com/"><img src="images/tcs_logo.jpg" alt="searchjob">Apply<p> Company name: TCS <br> Location: Chennai <br> CTC: 2.3 to 5.5</p></a></li>
+    
+        <h1>Filter By</h1>
+       
 
-  <li><a href="https://www.accenture.com/in-en"><img src="images/accenturelogo.jpg" alt="accenture">Apply<p> Company name: Accenture <br> Location: Chennai <br> CTC: 2.7 to 5.6</p></a></li>
-  <li><a href="https://www.ibm.com/in-en"><img src="images/ibmlogo.jpg" alt="ibm">Apply<p> Company name: IBM <br> Location: Chennai <br> CTC: 2.4 to 5.8</p></a></li>
-  <li><a href="https://appletech-store.com/https://appletech-store.com/"><img src="images/applelogo.png" alt="apple">Apply<p> Company name: Apple <br> Location: Chennai <br> CTC: 2.6 to 5.3</p></a></li>
-  <li><a href="https://www.oracle.com/in/index.html"><img src="images/oraclelogo.jpg" alt="oracle">Apply<p> Company name: oracle <br> Location: Chennai <br> CTC: 2.2 to 5.1</p></a></li>
-  <li><a href="https://www.paypal.com/in/home"><img src="images/paypallogo.png" alt="oracle">Apply<p> Company name: paypal <br> Location: Chennai <br> CTC: 2.5 to 5.6</p></a></li>
-</ul>
-<a href="index.html">Back</a>
-<script src="search.js"></script>
+        <h3 id="Skills">Add Skills</h3>
+        <!-- <form onsubmit="tamil()"> -->
+        <label><br>
+            <input type="checkbox" name="skills" id="skills" value="javascript" style="margin-bottom: 15px;">javascript
+        </label>
+        <label><br>
+            <input type="checkbox" name="skills" id="skills" value="c++" style="margin-bottom: 15px;">c++
+        </label><br>
+        <label><br>
+            <input type="checkbox" name="skills" id="skills" value="angular" style="margin-bottom: 15px;">angular
+        </label><br>
+        <button type="button" onclick="filterjob()">
+            Apply
+        </button>
+        <div class="jobData"></div>
+        
+        <script src="search.js"></script>
+        <script src="assets/jquery.min.js"></script>
 </body>
 </html>

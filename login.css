@@ -35,11 +35,13 @@ body {
 	display: block;
 	filter: blur(2px);
 }
-.form-box .header-text {
-	font-size: 32px;
+.form-box h1 {
+	
 	font-weight: 600;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 	text-align: center;
+	font-size: 30px;
+	padding-top: 25px;
 }
 .form-box input {
 	margin: 10px 0px;

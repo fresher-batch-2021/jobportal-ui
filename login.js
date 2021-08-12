@@ -14,7 +14,9 @@ const url="https://product-mock-api.herokuapp.com/jobportalapp/api/v1/auth/login
 console.log(loginobj);
 axios.post(url,loginobj).then(res=>{
     console.log(res);
+    localStorage.setItem("usrEmail",email);//savin email in local storage
     alert("login succesful");
+    // alert(localStorage.getItem("usrEmail"));
     window.location.href="index.html";
 }).catch(err=>{
     console.log(err.response.data);
