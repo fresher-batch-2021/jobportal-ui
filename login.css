@@ -6,6 +6,10 @@ body {
 	font-size: 16px;
 	color: #fff;
 }
+.backlink a{
+	color: #fff;
+    padding-top: 33px;
+}
 .form-box {
 	background-color: rgba(0, 0, 0, 0.5);
 	margin: auto auto;
