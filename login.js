@@ -3,7 +3,7 @@ function login() {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
 if(email ==""||email ==null||email.trim()==""){
-    alert("invalid username");
+    alert("invalid email");
 } else{
     if(password.trim()!=""){
         const loginobj={
@@ -14,8 +14,8 @@ const url="https://product-mock-api.herokuapp.com/jobportalapp/api/v1/auth/login
 console.log(loginobj);
 axios.post(url,loginobj).then(res=>{
     console.log(res);
-    localStorage.setItem("usrEmail",email);//savin email in local storage
-    alert("login succesful");
+    localStorage.setItem("userEmail",email);//savin email in local storage
+    alert("login successful");
     // alert(localStorage.getItem("usrEmail"));
     window.location.href="index.html";
 }).catch(err=>{
@@ -29,7 +29,7 @@ axios.post(url,loginobj).then(res=>{
 });    
 }
 else{
-    alert("password is invalid");
+    alert("password  cannot be blanked");
 }
 }
 }
