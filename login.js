@@ -15,7 +15,7 @@ console.log(loginobj);
 axios.post(url,loginobj).then(res=>{
     console.log(res);
     localStorage.setItem("userEmail",email);//savin email in local storage
-    alert("login successful");
+    alert("Login successful");
     // alert(localStorage.getItem("usrEmail"));
     window.location.href="index.html";
 }).catch(err=>{
@@ -24,12 +24,12 @@ axios.post(url,loginobj).then(res=>{
         alert(err.response.data.errormessage);
     }
     else{
-        alert("login failed");
+        alert("Login failed");
     }
 });    
 }
 else{
-    alert("password  cannot be blanked");
+    alert("Password  cannot be blanked");
 }
 }
 }
