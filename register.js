@@ -8,9 +8,7 @@ function register() {
    if(email==""||email==null||email.trim()==""){
        alert("invalid name");
    }
-   if(password.length<6){
-       alert("password must must be 6 character");
-   }
+   
    else 
    if(password != confirmpassword){
        alert("password does not match with confirmpassword");
