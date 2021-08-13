@@ -24,7 +24,7 @@ function register() {
        const url="https://product-mock-api.herokuapp.com/jobportalapp/api/v1/auth/register"
        axios.post(url,registerObj).then(res=>{
            console.log(res);
-           alert("Registeration is successful");
+           alert("Registration is successful");
            window.location.href="login.html";
        }).catch(err=>{
            console.error(err);
