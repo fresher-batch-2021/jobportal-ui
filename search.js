@@ -1,8 +1,20 @@
 function getJobs(){
   
-  var images = [{ imageUrl:"applelogo.png",skills:"javascript",companyname:"accenture"}, { imageUrl: "applelogo.png",skills:"c++",companyname:"Apple" }, { imageUrl: "oraclelogo.jpg",skills:"c++", companyname:"oracle"}]; 
-  displayJobs(images);
-}
+  //var images = [{ imageUrl:"applelogo.png",skills:"javascript",companyname:"accenture"}, { imageUrl: "applelogo.png",skills:"c++",companyname:"Apple" }, { imageUrl: "oraclelogo.jpg",skills:"c++", companyname:"oracle"}]; 
+  //displayJobs(images);//
+  const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
+       const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
+       const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+ 
+       const url = "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/_all_docs?include_docs-true";
+       console.log(basicAuth);
+       axios.post(url, registerObj, { headers: { Authorization: basicAuth } }).then(res =>{
+         let images=res.data.rows;
+         images=images.companyname((obj)=>obj.doc);
+         displayJobs(images)})
+         .catch(err=>{console.error(err);});
+       }
+
 getJobs();
 function displayJobs(jobs){
  
@@ -20,6 +32,7 @@ content+=`<tr>
 <td><img src="images/${job.imageUrl}" ></td>
 <td>${job.skills}</td>
 <td>${job.companyname}</td>
+
 `;
 }
 content+=`</table>`;
