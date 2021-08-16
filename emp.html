@@ -2,110 +2,113 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>employee</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>employee</title>
 </head>
 
-<body >
-    <form onsubmit="employee()">
-        <div class="form-box">
-            <div class="header-text">
-                Employee Details
-            </div>
-            <input placeholder="Your Name" type="text" id="name" required>
-            <input placeholder="keyskills" type="text" id="keyskills"required>
-            <!-- <input placeholder="Projects" type="text" id="projects"> -->
-            <input placeholder="Education" type="text" id="education"required>
-            <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
-            <input placeholder="Date of Birth" type="date" id="dateofbirth"required>
-            <input placeholder="MobileNo" type="text" id="mobileno" required>
-            <!-- <input placeholder="ctc" type="text" id="ctc"> -->
-            <!-- <input placeholder="expected_CTC" type="text" id="expected_CTC"> -->
-            <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+<body>
+  <form onsubmit="employee()">
+    <div class="form-box">
+      <div class="header-text">
+        Employee Details
+      </div>
+      <input placeholder="Your Name" type="text" id="name" required>
+      <input placeholder="keyskills" type="text" id="keyskills" required>
+      <!-- <input placeholder="Projects" type="text" id="projects"> -->
+      <input placeholder="Education" type="text" id="education" required>
+      <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
+      <input placeholder="Date of Birth" type="date" id="dateofbirth" required>
+      <input placeholder="MobileNo" type="text" id="mobileno" required>
+      <!-- <input placeholder="ctc" type="text" id="ctc"> -->
+      <!-- <input placeholder="expected_CTC" type="text" id="expected_CTC"> -->
+      <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
 
-            <p id="demo"></p>
-            <input id="terms" type="checkbox">
-            <label for="terms"></label>
-            <span>Agree with <a href="#">Terms & Conditions</a></span>
-            <button>submit</button><a style="color: white;" href="index.html">back</a></p>
-        </div>
-    </form>
-    <script>
-        function employee() {
-            event.preventDefault();
-            const name = document.querySelector("#name").value;
-            const keyskills = document.querySelector("#keyskills").value;
-            // const projects = document.querySelector("#projects").value;
-            const education = document.querySelector("#education").value;
-            
-            const resume = document.querySelector("#myFile").value;
+      <p id="demo"></p>
+      <input id="terms" type="checkbox">
+      <label for="terms"></label>
+      <span>Agree with <a href="#">Terms & Conditions</a></span>
+      <button>submit</button><a style="color: white;" href="index.html">back</a></p>
+    </div>
+  </form>
+  <script>
+    function employee() {
+      event.preventDefault();
+      const name = document.querySelector("#name").value;
+      const keyskills = document.querySelector("#keyskills").value;
+      // const projects = document.querySelector("#projects").value;
+      const education = document.querySelector("#education").value;
 
-            const dateofbirth = document.querySelector("#dateofbirth").value;
-            const mobileno = document.querySelector("#mobileno").value;
-            if(mobileno.length>10){
-                window.alert("Please enter the 10 digit mobile no");
-                
-            }
-            // const ctc = document.querySelector("#ctc").value;
-            // const expected_CTC = document.querySelector("#expected_CTC").value;
-            console.log(name + " " + keyskills  + "" + education  + "" + dateofbirth + "" + mobileno);
-            let userobj = {
-                "name": name,
-                "keyskills": keyskills,
-                // "projects": projects,
-                "education": education,
-                "resume": resume,
-                "dateofbirth": dateofbirth,
-                "mobileno": mobileno
-                // "ctc": ctc,
-                // "expected_CTC": expected_CTC
-            }
-            console.log(userobj);
-           
-//    console.log(x);
-            alert("Your Response saved Successfully");
-            // window.location.href = "index.html";
-        }
+      const resume = document.querySelector("#myFile").value;
 
+      const dateofbirth = document.querySelector("#dateofbirth").value;
+      const mobileno = document.querySelector("#mobileno").value;
+      if (mobileno.length > 10) {
+        window.alert("Please enter the 10 digit mobile no");
 
-        function myFunction(){
-            let fileName='';
-    var x = document.getElementById("myFile");
-    var txt = "";
-    if ('files' in x) {
-        // alert(x);
-      if (x.files.length == 0) {
-        txt = "Select one or more files.";
-      } else {
-        for (var i = 0; i < x.files.length; i++) {
-          txt += "<br><strong>" + (i+1) + ". file</strong><br>";
-          var file = x.files[i];
-          if ('name' in file) {
-            txt += "name: " + file.name + "<br>";
-            // alert(file.name);
-            // console.log(file.name);
-             fileName=file.name;
-          }
-          if ('size' in file) {
-            txt += "size: " + file.size + " bytes <br>";
-          }
-        }
       }
-    } 
-    else {
-      if (x.value == "") {
-        txt += "Select one or more files.";
-      } else {
-        txt += "The files property is not supported by your browser!";
-        txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+     
+      // const ctc = document.querySelector("#ctc").value;
+      // const expected_CTC = document.querySelector("#expected_CTC").value;
+      console.log(name + " " + keyskills + "" + education + "" + dateofbirth + "" + mobileno);
+      let userobj = {
+        "name": name,
+        "keyskills": keyskills,
+        // "projects": projects,
+        "education": education,
+        "resume": resume,
+        "dateofbirth": dateofbirth,
+        "mobileno": mobileno
+        // "ctc": ctc,
+        // "expected_CTC": expected_CTC
       }
+     
+      //    console.log(x);
+      alert("Your Response saved Successfully");
+      // window.location.href = "index.html";
     }
-    document.getElementById("demo").innerHTML = txt;
-    return(fileName);
-  }
-    </script>
+
+
+    function myFunction() {
+      let fileName = '';
+      var x = document.getElementById("myFile");
+      var txt = "";
+      if ('files' in x) {
+        // alert(x);
+        if (x.files.length == 0) {
+          txt = "Select one or more files.";
+        } else {
+          for (var i = 0; i < x.files.length; i++) {
+            txt += "<br><strong>" + (i + 1) + ". file</strong><br>";
+            var file = x.files[i];
+            if ('name' in file) {
+              txt += "name: " + file.name + "<br>";
+              // alert(file.name);
+              // console.log(file.name);
+              fileName = file.name;
+            }
+            if ('size' in file) {
+              txt += "size: " + file.size + " bytes <br>";
+            }
+          }
+        }
+      }
+      else {
+        if (x.value == "") {
+          txt += "Select one or more files.";
+        } else {
+          txt += "The files property is not supported by your browser!";
+          txt += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+        }
+      }
+      document.getElementById("demo").innerHTML = txt;
+      return (fileName);
+    }
+  </script>
 </body>
 
 </html>
