@@ -18,19 +18,16 @@ function register() {
            "name":name,
            "email":email,
            "password":password,
-           "confirmpassword":confirmpassword
+            "confirmpassword":confirmpassword
        };
        console.log(registerObj);
       
-       const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
-       const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
-       const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+      
  
-       const url = "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal";
-       console.log(basicAuth);
-       axios.post(url, registerObj, { headers: { Authorization: basicAuth } }).then(res => {
-
-        console.log(res);
+      UserService.register(registerObj).then(res =>{
+ 
+        let data=res.data;
+        console.log(data);
         alert("Registration is successful");
         window.location.href="login.html";
    }).catch(err=>{

@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="search.css">
-</head>
-<body>
-    
-        <h1>Filter By</h1>
-       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="search.css" />
+    <title>Live User Filter</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h4 class="title">Job Search Filter</h4>
+        <small class="subtitle">Search by name/location</small>
+        <input type="text" id="filter" placeholder="Search">
+      </header>
 
-        <h3 id="Skills">Add Skills</h3>
-        <!-- <form onsubmit="tamil()"> -->
-        <label><br>
-            <input type="checkbox" name="skills" id="skills" value="javascript" style="margin-bottom: 15px;">javascript
-        </label>
-        <label><br>
-            <input type="checkbox" name="skills" id="skills" value="c++" style="margin-bottom: 15px;">c++
-        </label><br>
-        <label><br>
-            <input type="checkbox" name="skills" id="skills" value="angular" style="margin-bottom: 15px;">angular
-        </label><br>
-        <button type="button" onclick="filterjob()">
-            Apply
-        </button>
-        <div class="jobData"></div>
-        
-        <script src="search.js"></script>
-        <script src="assets/jquery.min.js"></script>
-</body>
+      <ul id="result" class="user-list">
+        <li>
+          <h3>Loading...</h3>
+        </li>
+      </ul>
+      <a href="index.html"><button>back</button></a>
+    </div>
+    <script src="search.js"></script>
+  </body>
 </html>

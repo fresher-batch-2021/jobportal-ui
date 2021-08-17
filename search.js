@@ -1,68 +1,43 @@
-function getJobs(){
-  
-  //var images = [{ imageUrl:"applelogo.png",skills:"javascript",companyname:"accenture"}, { imageUrl: "applelogo.png",skills:"c++",companyname:"Apple" }, { imageUrl: "oraclelogo.jpg",skills:"c++", companyname:"oracle"}]; 
-  //displayJobs(images);//
-  const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
-       const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
-       const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
- 
-       const url = "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/_all_docs?include_docs-true";
-       console.log(basicAuth);
-       axios.post(url, registerObj, { headers: { Authorization: basicAuth } }).then(res =>{
-         let images=res.data.rows;
-         images=images.companyname((obj)=>obj.doc);
-         displayJobs(images)})
-         .catch(err=>{console.error(err);});
-       }
+const result = document.getElementById('result')
+const filter = document.getElementById('filter')
+const listItems = []
+getData()
 
-getJobs();
-function displayJobs(jobs){
- 
-  let content=`
-  <table>
-  <tr>
-  <th>image</th>
-  <th>skills</th>
-  <th>companyname</th>
-  </tr>
+filter.addEventListener('input', (e) => filterData(e.target.value))
 
-  `;
-for(let job of jobs){
-content+=`<tr>
-<td><img src="images/${job.imageUrl}" ></td>
-<td>${job.skills}</td>
-<td>${job.companyname}</td>
+async function getData() {
+    const res = await fetch('jsondata.json')
 
-`;
-}
-content+=`</table>`;
-document.querySelector(".jobData").innerHTML=content;
+    const { results } = await res.json()
 
+    // Clear result
+    result.innerHTML = ''
+
+    results.forEach(user => {
+        const li = document.createElement('li')
+
+        listItems.push(li)
+
+        li.innerHTML = `
+            <img src="${user.picture.large}" alt="${user.companyName}">
+            <div class="user-info">
+                <h4>${user.companyName}</h4>
+                <h5>Required :${user.skills}</h5>
+                <p>${user.location.city}, ${user.location.country}</p>
+                <h5>Apply<a href="">${user.link}</a></h5>
+            </div>
+        `
+
+        result.appendChild(li)
+    })
 }
 
-
-function filterjob(){
-
-  var allSkills=document.querySelectorAll("#skills");
-  let selectedSkills = [];
-  for(let skills of allSkills){
-      if (skills.checked){
-          selectedSkills.push(skills.value);
-      }
-  }
-  console.log(selectedSkills);
-
-  if (selectedSkills.length == 0){
-     alert("please select the skills");
-  }
- else{
-  var images = [{imageUrl: "applelogo.jpg", skills:"javascript",companyname:"accenture"}, { imageUrl: "applelogo.jpg",skills:"c++",companyname:"Apple" }, { imageUrl: "oraclelogo.jpg",skills:"c++", companyname:"oracle"}];
-  // displaying images 
-      //  let filteredMovies = images.filter(obj=>obj.language=="tamil"|| obj.language=='english');
-     let filteredJobs = images.filter(obj=> selectedSkills.includes(obj.skills));
-  displayJobs(filteredJobs);
- } 
-
-
+function filterData(searchTerm) {
+    listItems.forEach(item => {
+        if(item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
+            item.classList.remove('hide')
+        } else {
+            item.classList.add('hide')
+        }
+    })
 }
-
