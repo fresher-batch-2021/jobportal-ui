@@ -1,5 +1,6 @@
 const dbUserName = "apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9";
 const dbPassword = "532b6c43f03b7016261e7a66b65a2648";
+const endpoint="https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/";
 // one space after Basic
 const basicAuth = "Basic " + btoa(dbUserName + ":" + dbPassword);
 class UserService {
@@ -30,4 +31,16 @@ class UserService {
       headers: { Authorization: basicAuth }
     });
   }
+
+  static getAllData(db){
+
+    const url=endpoint+db+"/_all_docs?include_docs=true";
+    return axios.get(url,{headers:{Authorization:basicAuth}});
+  }
+
+  static getJobs(){
+    let allData= this.getAllData("jobs");
+    return allData;
+  }
+
 }
