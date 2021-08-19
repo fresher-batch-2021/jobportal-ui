@@ -1,62 +1,36 @@
-
-function loginCheck(){
-    let isLoggedIn=JSON.parse(localStorage.getItem("isLoggedIn"));
-if(isLoggedIn==undefined||isLoggedIn==null||isLoggedIn==false){
-  alert("needed to login first");
-   
-    localStorage.setItem("isLoggedIn",JSON.stringify(false));
-    window.location.href="Login.html";
-}
-}
-loginCheck()
-
 const result = document.getElementById('result')
 const filter = document.getElementById('filter')
 const listItems = []
-getData("javascript");
+getData()
 
 filter.addEventListener('input', (e) => filterData(e.target.value))
 
- function getData(skillName) {
-    //const res = await fetch('jsondata.json')
+async function getData() {
+    const res = await fetch('jsondata.json')
 
-    //const { results } = await res.json()
-    // ServiceUIFrameContext.location().then(r)
+    const { results } = await res.json()
 
-    // // Clear result
-    // UserService.filter("jobs","javascript")
-    // result.innerHTML = ''
-    let x=UserService.getJobs();
-    x.then(res=>{
-        let value=res.data.rows.map(obj=>obj.doc);
-        console.table(value);
-      let results=value.filter(obj=>obj.companyName==skillName||obj.skills==skillName);
-        console.table(results);
+    // Clear result
+    result.innerHTML = ''
 
-      results.forEach(user => {
-        const li = document.createElement('li');
-        
+    results.forEach(user => {
+        const li = document.createElement('li')
+
         listItems.push(li)
-        console.log("yesh",user.imageUrl);
+
         li.innerHTML = `
-            <img src="images/${user.imageUrl}" alt="${user.companyname}">
+            <img src="${user.picture.large}" alt="${user.companyName}">
             <div class="user-info">
-                <h4>${user.companyname}</h4>
+                <h4>${user.companyName}</h4>
                 <h5>Required :${user.skills}</h5>
-                
-                <h5><a href="">Apply</a></h5>
+                <p>${user.location.city}, ${user.location.country}</p>
+                <h5>Apply<a href="">${user.link}</a></h5>
             </div>
-        `;
+        `
 
         result.appendChild(li)
-    })}).catch(err =>{
-        console.error(err);
-      console.log(err.response);
-    });
-
-    
+    })
 }
-
 
 function filterData(searchTerm) {
     listItems.forEach(item => {
@@ -67,3 +41,4 @@ function filterData(searchTerm) {
         }
     })
 }
+
