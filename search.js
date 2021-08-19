@@ -1,3 +1,15 @@
+
+function loginCheck(){
+    let isLoggedIn=JSON.parse(localStorage.getItem("isLoggedIn"));
+if(isLoggedIn==undefined||isLoggedIn==null||isLoggedIn==false){
+  alert("needed to login first");
+   
+    localStorage.setItem("isLoggedIn",JSON.stringify(false));
+    window.location.href="Login.html";
+}
+}
+loginCheck()
+
 const result = document.getElementById('result')
 const filter = document.getElementById('filter')
 const listItems = []
@@ -23,11 +35,11 @@ filter.addEventListener('input', (e) => filterData(e.target.value))
 
       results.forEach(user => {
         const li = document.createElement('li');
-
+        
         listItems.push(li)
-
+        console.log("yesh",user.imageUrl);
         li.innerHTML = `
-            <img src="${user.imageUrl}" alt="${user.companyname}">
+            <img src="images/${user.imageUrl}" alt="${user.companyname}">
             <div class="user-info">
                 <h4>${user.companyname}</h4>
                 <h5>Required :${user.skills}</h5>

@@ -18,24 +18,40 @@
         Employee Details
       </div>
       <input placeholder="Your Name" type="text" id="name" required>
-      <input placeholder="keyskills" type="text" id="keyskills" required>
+      <input placeholder="Keyskills" type="text" id="keyskills" required>
       <!-- <input placeholder="Projects" type="text" id="projects"> -->
       <input placeholder="Education" type="text" id="education" required>
       <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
-      <input placeholder="Date of Birth" type="date" id="dateofbirth" required>
+      <input placeholder="Date_of_Birth" type="date" id="dateofbirth" required>
       <input placeholder="MobileNo" type="text" id="mobileno" required>
       <!-- <input placeholder="ctc" type="text" id="ctc"> -->
       <!-- <input placeholder="expected_CTC" type="text" id="expected_CTC"> -->
       <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
 
-      <p id="demo"></p>
-      <input id="terms" type="checkbox">
-      <label for="terms"></label>
-      <span>Agree with <a href="#">Terms & Conditions</a></span>
+      
+      
+      
       <button>submit</button><a style="color: white;" href="index.html">back</a></p>
     </div>
   </form>
   <script>
+
+function loginCheck(){
+    let isLoggedIn=JSON.parse(localStorage.getItem("isLoggedIn"));
+if(isLoggedIn==undefined||isLoggedIn==null||isLoggedIn==false){
+  alert("needed to login first");
+   
+    localStorage.setItem("isLoggedIn",JSON.stringify(false));
+    window.location.href="Login.html";
+}
+}
+loginCheck()
+
+
+
+
+
+
     function employee() {
       event.preventDefault();
       const name = document.querySelector("#name").value;
@@ -120,6 +136,11 @@
       document.getElementById("demo").innerHTML = txt;
       return (fileName);
     }
+    function setDate(){
+        let today=new Date().toJSON().substr(0,10);
+        document.querySelector("#dateofbirth").setAttribute("max",today);
+    }
+setDate();
   </script>
 </body>
 
