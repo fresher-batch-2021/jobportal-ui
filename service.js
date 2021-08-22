@@ -32,15 +32,15 @@ class UserService {
     });
   }
 
-  // static getAllData(db){
+   static getAllData(db){
 
-  //   const url=endpoint+db+"/_all_docs?include_docs=true";
-  //   return axios.get(url,{headers:{Authorization:basicAuth}});
-  // }
+  const url=endpoint+db+"/_all_docs?include_docs=true";
+  return axios.get(url,{headers:{Authorization:basicAuth}});
+   }
 
-  // static getJobs(){
-  //   let allData= this.getAllData("jobs");
-  //   return allData;
-  // }
+   static getJobs(){
+    let allData= this.getAllData("jobs");
+   return allData;
+   }
 
 }

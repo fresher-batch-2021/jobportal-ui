@@ -13,6 +13,8 @@ function login() {
       UserService.login(email, password)
         .then((res) => {
           console.log(res);
+          // localStorage.setItem("isLoggedIn",JSON.stringify(true));
+          localStorage.setItem("IsLoggedIn",JSON.stringify(true));
           localStorage.setItem("userEmail", email); //savin email in local storage
           alert("Login successful");
           // alert(localStorage.getItem("usrEmail"));
