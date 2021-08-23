@@ -22,6 +22,11 @@ class UserService {
     });
   }
 
+  static findData(id){
+    const url=`https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobs/${id}`;
+    return axios.get(url,{headers:{Authorization:basicAuth}});
+  }
+
   static register(registerObj) {
 
     const url =
