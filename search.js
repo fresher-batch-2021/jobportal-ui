@@ -34,6 +34,7 @@ window.addEventListener('input', (e) =>filterData(e.target.value))
                 <h5>Required :${user.skills}</h5>
                 
                 <h5><button><a href ="applied.html?id=${user._id}">Apply</a></button></h5>
+                
             </div>
         `;
 

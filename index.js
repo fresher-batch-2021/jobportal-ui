@@ -1,4 +1,5 @@
 var slideIndex = 0;
+console.log(localStorage.getItem("userObj"))
 showSlides();
 
 function showSlides() {

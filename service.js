@@ -6,14 +6,14 @@ const basicAuth = "Basic " + btoa(dbUserName + ":" + dbPassword);
 class UserService {
   static login(email, password) {
     const url =
-      "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal/_find"; //registration url
+      "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register/_find"; //registration url
 
     const requestData = {
       selector: {
         email: email,
         password: password,
       },
-      fields: ["id", "rev", "name", "email", "role"],
+      fields: ["_id", "_rev", "name", "email","password","appliedJobs"]
     };
     console.log(requestData); //for our verification
 
@@ -21,6 +21,12 @@ class UserService {
       headers: { Authorization: basicAuth },
     });
   }
+  
+static updateData(id,rev,obj){
+  // let data=
+  const url=`https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register/${id}?rev=${rev}`;
+    return axios.put(url,obj,{headers:{Authorization:basicAuth}});
+}
 
   static findData(id){
     const url=`https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobs/${id}`;
@@ -28,9 +34,9 @@ class UserService {
   }
 
   static register(registerObj) {
-
+alert("sss")
     const url =
-      "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal";
+      "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register";
     console.log(basicAuth);
     return axios.post(url, registerObj, {
       headers: { Authorization: basicAuth }
@@ -43,6 +49,11 @@ class UserService {
   return axios.get(url,{headers:{Authorization:basicAuth}});
    }
 
+   static getRegisterData(id){
+
+    const url=endpoint+"register/"+id;
+    return axios.get(url,{headers:{Authorization:basicAuth}});
+     }
    static getJobs(){
     let allData= this.getAllData("jobs");
    return allData;
