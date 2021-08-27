@@ -1,11 +1,20 @@
+
+  
 function employee() {
+  
+  const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
+  const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
+  const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
+
+  const url = "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills";
     event.preventDefault();
+    const email = document.querySelector("#email").value;
     const name = document.querySelector("#name").value;
     const keyskills = document.querySelector("#keyskills").value;
     // const projects = document.querySelector("#projects").value;
     const education = document.querySelector("#education").value;
 
-    // const resume = document.querySelector("#myFile").value;
+    const resume = document.querySelector("#myFile").value;
 
     const dateofbirth = document.querySelector("#dateofbirth").value;
     const mobileno = document.querySelector("#mobileno").value;
@@ -16,27 +25,24 @@ function employee() {
 
     // const ctc = document.querySelector("#ctc").value;
     // const expected_CTC = document.querySelector("#expected_CTC").value;
-    console.log(name + " " + keyskills + "" + education + "" + dateofbirth + "" + mobileno);
+    console.log(email+" "+name + " " + keyskills + "" + education + "" + dateofbirth + "" + mobileno);
     let userobj = {
+      "email":email,
       "name": name,
       "keyskills": keyskills,
       // "projects": projects,
       "education": education,
-      "resume": "resume",
+      "resume": resume,
       "dateofbirth": dateofbirth,
       "mobileno": mobileno
       // "ctc": ctc,
       // "expected_CTC": expected_CTC
     };
-    const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
-    const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
-    const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
-
-    const url = "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills";
     console.log(basicAuth);
     axios.post(url, userobj, { headers: { Authorization: basicAuth } }).then(res => {
 
       console.log(res);
+      
       alert("YOUR RESPONSE SAVE SUCCESSFULL");
       window.location.href = "index.html";
     }).catch(err => {
@@ -85,3 +91,4 @@ function employee() {
       document.querySelector("#dateofbirth").setAttribute("max",today);
   }
 setDate();
+

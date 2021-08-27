@@ -15,7 +15,7 @@ alert(Id);
         let jobObj={
             companyname:name,
             skills:skills,
-            status:"today"
+            status:"Applied"
         };
        
         let usr=JSON.parse(localStorage.getItem("userObj"));
@@ -28,7 +28,7 @@ alert(Id);
         let addJobs=userObj.appliedJobs;
         // console.table(addJobs)
         let jobs=addJobs !=null ?addJobs:[];
-        jobs.push({companyName:name,skills:skills,status:"today"});
+        jobs.push({companyName:name,skills:skills,status:"Applied"});
         userObj.appliedJobs=jobs
         localStorage.setItem("userObj",JSON.stringify(userObj));
         let updateUserObj=JSON.parse(localStorage.getItem("userObj"))

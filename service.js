@@ -13,7 +13,7 @@ class UserService {
         email: email,
         password: password,
       },
-      fields: ["_id", "_rev", "name", "email","password","appliedJobs"]
+      fields: ["_id", "_rev", "name", "email","appliedJobs"]
     };
     console.log(requestData); //for our verification
 
