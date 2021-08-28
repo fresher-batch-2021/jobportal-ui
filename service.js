@@ -34,7 +34,7 @@ static updateData(id,rev,obj){
   }
 
   static register(registerObj) {
-alert("sss")
+
     const url =
       "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register";
     console.log(basicAuth);

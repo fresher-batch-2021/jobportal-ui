@@ -33,7 +33,7 @@ function register() {
  
         let data=res.data;
         console.log(data);
-        alert(data)
+         alert(data)
         alert("Registration is successful");
         window.location.href="login.html";
    }).catch(err=>{

@@ -96,3 +96,9 @@ body {
 .user-list li.hide {
   display: none;
 }
+.navbarimg{
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-left: 12px;
+}
