@@ -1,6 +1,4 @@
 getProfileData();
-
-
     function getProfileData(){
         let email=(localStorage.getItem("userEmail"))
         alert(email)
@@ -15,7 +13,7 @@ getProfileData();
           selector: {
             email: email
           },
-          fields: ["_id", "_rev", "name", "email","keyskills","education","resume","dateofbirth","mobileno"]
+          fields: ["_id", "_rev", "email", "name","mobileno","education","keyskills"]
         };
         console.log(requestData); //for our verification
       
@@ -24,9 +22,7 @@ getProfileData();
         }).then(res=>{
           console.log(res.data)
           localStorage.setItem("profileData",JSON.stringify(res.data.docs[0]))
-
-            let content="";
-          
+          let content="";
           let Obj=res.data.docs[0];
     
           // for(let Obj of details){
@@ -35,12 +31,10 @@ getProfileData();
               <td>${Obj.name}</td> 
               <td>${Obj.mobileno}</td>       
               <td>${Obj.education}</td>
-              
-              
-             
-              `;
-              
-                     
+              <td>${Obj.keyskills}</td>
+              <td><a href='edit.html?id=${Obj._id}'>Edit</a></td>
+             `;             
+                  
           // }
           document.querySelector("#list-jobs").innerHTML = content;
       }).catch(err=>{
