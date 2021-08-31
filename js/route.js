@@ -12,7 +12,7 @@ const routes = [
 ];
 
  function logout() {
-     alert('im logging out')
+     
      localStorage.clear();
      window.location.href = "login.html";
  }
