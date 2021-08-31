@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,33 +9,24 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>employee</title>
 </head>
-
 <body>
   <form onsubmit="employee()">
-    <div class="form-box">
-      <div class="header-text">
-        Employee Details
-      </div>
-      <input placeholder="Your Email Address" type="email" id="email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com">
-      <input placeholder="Your Name" type="text" id="name" required>
-      <input placeholder="Keyskills" type="text" id="keyskills" required>
-      <!-- <input placeholder="Projects" type="text" id="projects"> -->
-      <input placeholder="Education" type="text" id="education" required>
-      <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
-      <input placeholder="Date_of_Birth" type="date" id="dateofbirth" required>
-      <input placeholder="MobileNo" type="text" id="mobileno" required>
-      <!-- <input placeholder="ctc" type="text" id="ctc"> -->
-      <!-- <input placeholder="expected_CTC" type="text" id="expected_CTC"> -->
-      <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
-
-      
-      
-      
-      <button>submit</button><a style="color: white;" href="index.html">back</a></p>
-    </div>
+  <div class="form-box">
+  <div class="header-text">
+    Employee Details
+  </div>
+  <input placeholder="Your Email Address" type="email" id="email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com">
+  <input placeholder="Your Name" type="text" id="name" required>
+  <input placeholder="Keyskills" type="text" id="keyskills" required>
+  <input placeholder="Education" type="text" id="education" required>
+  <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
+  <input placeholder="Date_of_Birth" type="date" id="dateofbirth" required>
+  <input placeholder="MobileNo" type="text" id="mobileno" required>
+  <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+  <button>submit</button><a style="color: white;" href="index.html">back</a></p>
+  </div>
   </form>
   <script src="js/route.js"></script>
   <script src="js/emp.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 function displayJobs(email) {
     let content = "";
-   
     const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
     const dbPassword = '532b6c43f03b7016261e7a66b65a2648';
     const basicAuth = 'Basic ' + btoa(dbUsername + ':' + dbPassword);
@@ -13,19 +12,14 @@ function displayJobs(email) {
     fields:["appliedJobs"]
 };
     axios.post(url,requestData,{ headers: { Authorization: basicAuth } }).then(res=>{
-        console.log(res.data.docs[0])
-        // let email=res.data;
+    console.log(res.data.docs[0])
     let details=res.data.docs[0].appliedJobs;
-    
     for(let Obj of details){
         content += `<tr>
-       
         <td>${Obj.companyName}</td>       
         <td>${Obj.skills}</td>
         <td>${Obj.status}</td></tr>
-       
         `;
-               
     }
     document.querySelector("#list-jobs").innerHTML = content;
 }).catch(err=>console.error(err))

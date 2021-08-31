@@ -1,9 +1,8 @@
-  function productSpec() {
+  function appliedSpec() {
 // getting datas from url of the page
     const param = new URLSearchParams(window.location.search.substr(1));
     let Id = param.get("id");
-
-alert(Id);
+// alert(Id);
     UserService.findData(Id).then(res => {
         let value = res.data;
         alert("job Applied successfully")
@@ -20,7 +19,7 @@ alert(Id);
        
         let usr=JSON.parse(localStorage.getItem("userObj"));
         console.log(usr._id)
-        alert(usr._id)
+        // alert(usr._id)
         UserService.getRegisterData(usr._id).then(res=>{
         console.log("yesh",res.data);
         let userObj=res.data;
@@ -60,4 +59,4 @@ alert(Id);
 });
           
 }
-productSpec();
+appliedSpec();
