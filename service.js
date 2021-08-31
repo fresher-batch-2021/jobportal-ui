@@ -12,8 +12,9 @@ class UserService {
       selector: {
         email: email,
         password: password,
+        
       },
-      fields: ["_id", "_rev", "name", "email","appliedJobs"]
+      fields: ["_id", "_rev", "name", "email","role","appliedJobs"]
     };
     console.log(requestData); //for our verification
 

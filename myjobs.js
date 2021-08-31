@@ -39,7 +39,6 @@ function displayJobs(email) {
        
         <td>${Obj.companyName}</td>       
         <td>${Obj.skills}</td>
-        
         <td>${Obj.status}</td></tr>
        
         `;

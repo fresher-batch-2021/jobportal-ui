@@ -1,6 +1,6 @@
 getProfileData();
     function getProfileData(){
-        let email=(localStorage.getItem("userEmail"))
+        let email=JSON.parse((localStorage.getItem("userEmail")))
         alert(email)
   
         const dbUsername = 'apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
@@ -21,10 +21,11 @@ getProfileData();
           headers: { Authorization: basicAuth },
         }).then(res=>{
           console.log(res.data)
+          console.table(res.data)
           localStorage.setItem("profileData",JSON.stringify(res.data.docs[0]))
           let content="";
           let Obj=res.data.docs[0];
-    
+        
           // for(let Obj of details){
               content += `<tr>
               <td>${Obj.email}</td> 
@@ -34,12 +35,13 @@ getProfileData();
               <td>${Obj.keyskills}</td>
               <td><a href='edit.html?id=${Obj._id}'>Edit</a></td>
              `;             
-                  
+             
           // }
           document.querySelector("#list-jobs").innerHTML = content;
+          
       }).catch(err=>{
           console.error(err)
-      console.log(content);
+      
         //   
         })
       
