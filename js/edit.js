@@ -1,11 +1,9 @@
-const queryString = window.location.search;
+function editDetails() {
+    const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 console.log(id);
-
-function editDetails(id) {
-    console.log(id);
     const dbUsername='apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
     const dbPassword='532b6c43f03b7016261e7a66b65a2648';
     const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
@@ -26,10 +24,9 @@ function editDetails(id) {
     })
     .catch(err => console.error(err));
 }
-editDetails(id);
 
 function modifyDetails(){
-
+event.preventDefault();
     let id = document.querySelector("#id").value;
     let rev = document.querySelector("#rev").value;
     let email = document.querySelector("#email").value;
@@ -39,11 +36,9 @@ function modifyDetails(){
     let resume = document.querySelector("#resume").value;
     let dateofbirth = document.querySelector("#dateofbirth").value;
     let mobileno = document.querySelector("#mobileno").value;
-
-
-    let modifyDetails = {
+let modifyDetails = {
         "_id": id,
-        "_rev": rev,  
+        "_rev": rev ,  
         "email": email,      
         "name":name,
         "keyskills":keyskills,
@@ -53,17 +48,19 @@ function modifyDetails(){
         "mobileno":mobileno
         }
     console.log(modifyDetails);
-    
     const dbUsername='apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
     const dbPassword='532b6c43f03b7016261e7a66b65a2648';
     const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
-    const url = `https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills/${id}`;
+    const url = `https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills/${id}/?rev=${rev}`;
     axios.put(url, modifyDetails, {headers:{Authorization:basicAuth}}).then(res=>{
-            console.log(modifyDetails)
-        alert("successfull");
-        window.location.href="profile.html";
+    console.log(modifyDetails)
+    toastr.success("successfull");
+        setTimeout(function(){
+            window.location.href="profile.html";
+        },1500)
+    
     }).catch(err => alert("error "))
 
 }
 
-editDetails(id);
+editDetails();

@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/login.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>employee</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
 </head>
 <body>
   <form onsubmit="employee()">
@@ -19,10 +20,9 @@
   <input placeholder="Your Name" type="text" id="name" required>
   <input placeholder="Keyskills" type="text" id="keyskills" required>
   <input placeholder="Education" type="text" id="education" required>
-  <!-- <input placeholder="ResumeHeadline" type="text" id="resume"> -->
   <input placeholder="Date_of_Birth" type="date" id="dateofbirth" required>
   <input placeholder="MobileNo" type="text" id="mobileno" required>
-  <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+  <input type="file" id="myFile" multiple size="50" onchange="myFunction()"required>
   <button>submit</button><a style="color: white;" href="index.html">back</a></p>
   </div>
   </form>

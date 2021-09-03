@@ -1,4 +1,5 @@
 function employee() {
+  event.preventDefault();
   const dbUsername = "apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9";
   const dbPassword = "532b6c43f03b7016261e7a66b65a2648";
   const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
@@ -12,8 +13,11 @@ function employee() {
   const dateofbirth = document.querySelector("#dateofbirth").value;
   const mobileno = document.querySelector("#mobileno").value;
   if (mobileno.length > 10) {
-    window.alert("Please enter the 10 digit mobile no");
+    toastr.error('Please enter the 10 digit mobile no');
+    // window.alert("Please enter the 10 digit mobile no");
   }
+  else
+  {
   console.log(email +" " +name +" " +keyskills +"" +education +"" +dateofbirth +"" +mobileno);
   let userobj = {
     email: email,
@@ -29,13 +33,18 @@ function employee() {
     .post(url, userobj, { headers: { Authorization: basicAuth } })
     .then((res) => {
       console.log(res);
-      alert("YOUR RESPONSE SAVED SUCCESSFULL");
-      window.location.href = "index.html";
+      toastr.success("Your Response Saved Successful");
+      setTimeout(function () {
+      window.location.href='index.html'
+        }, 1500);
+      // alert("YOUR RESPONSE SAVED SUCCESSFULL");
+      // window.location.href = "index.html";
     })
     .catch((err) => {
       console.error(err.response.data);
-      alert("Unable to register");
-    });
+      toastr.error('Unable to register');
+      // alert("Unable to register");
+    });}
 }
 function myFunction() {
   let fileName = "";
@@ -75,4 +84,4 @@ function setDate() {
   let today = new Date().toJSON().substr(0, 10);
   document.querySelector("#dateofbirth").setAttribute("max", today);
 }
-setDate();
+setDate()

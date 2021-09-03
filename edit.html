@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
+    
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <h1>Edit Skills</h1>
+    <div class="box">
+        <div>
 <form>
     <input type="hidden" id="id" readonly />
     <input type="hidden" id="rev" readonly />
@@ -16,7 +30,7 @@
     <tr>
     <th>email</th>
     <td><input type="text" id="email"readonly></td><br>
-    <th>name</th>
+    <th >name</th>
     <td><input type="text" id="name"readonly></td><br>
     <th>keyskills</th>
     <td><input  type="text" id="keyskills"></td><br>
@@ -30,10 +44,15 @@
     <td><input  type="text" id="mobileno"readonly><br></td><br>
     <br>
     </tr>
+    <!-- <button onclick="modifyDetails()" id="edit" value="Update"></button><br> -->
+    <button onclick="modifyDetails()" id="edit" value="Update">Update</button>
+    <a href="profile.html">back</a></td>
     <!-- </thead> -->
     <!-- </table> -->
     </form>
-    <input type="submit" onclick="modifyDetails()" id="edit" value="Done"></td>
+    </div>
+    </div>
+  
     <script src="js/route.js"></script>
     <script src="js/edit.js"></script>
 </body>

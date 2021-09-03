@@ -4,6 +4,9 @@
   
   box-sizing: border-box;
 }
+body{
+  background-color: rgb(228, 228, 228);
+}
 
 .show {
   font-family: 'Muli', sans-serif;
@@ -160,5 +163,26 @@
 .containers {
   padding: 2px 20px;
 }
+.box{
+  margin-top: 20px;
+  padding: 30px;
+  float: left;
+  border: solid rgb(153, 69, 69); 
+  margin-left: 400px;
+  width: 450px;
+  background-color: dimgray;
+
+}
+#email,#name,#keyskills,#education,#resume,#dateofbirth,#mobileno
+{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    box-sizing:border-box;
+
+}
+
 
 
