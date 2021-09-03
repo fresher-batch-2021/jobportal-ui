@@ -1,4 +1,5 @@
 function register() {
+
   event.preventDefault();
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
@@ -20,7 +21,18 @@ else{
     "password":password,
     "role":"USER"
     };
-console.log(registerObj);
+    
+    isEmailExists(email).then(res => {
+      console.log(registerObj);
+      let exists = res;
+      if (exists) {
+          toastr.error("", "This email Id is already exists",//if its true it is an error
+              {
+                  preventDuplicate: true
+              });
+
+
+      }else{
 UserService.register(registerObj).then(res =>{
  let data=res.data;
     console.log(data);
@@ -36,5 +48,9 @@ UserService.register(registerObj).then(res =>{
           //  alert("Unable to register");
           toastr.error("Unable to register");
    });
-   }
+   
+    }
+  }
+);
+}
 }
