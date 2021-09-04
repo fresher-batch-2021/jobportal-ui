@@ -9,12 +9,6 @@ function appliedSpec() {
             const img_url = value.imageUrl;
             const skills = value.skills;
             const appliedJobs=value.appliedJobs;
-            let jobObj={
-                companyname:name,
-                skills:skills,
-                status:"Applied"
-            };
-           
             let usr=JSON.parse(localStorage.getItem("userObj"));
             console.log(usr._id)
             UserService.getRegisterData(usr._id).then(res=>{
