@@ -16,11 +16,11 @@ console.log(id);
         document.querySelector("#rev").value = jobDetail._rev;
         document.querySelector("#email").value = jobDetail.email;
         document.querySelector("#name").value = jobDetail.name;
-        document.querySelector("#keyskills").value = jobDetail.keyskills;
+        document.querySelector("#keySkills").value = jobDetail.keySkills;
         document.querySelector("#education").value = jobDetail.education;
         document.querySelector("#resume").value = jobDetail.resume;
-        document.querySelector("#dateofbirth").value = jobDetail.dateofbirth;
-        document.querySelector("#mobileno").value = jobDetail.mobileno;
+        document.querySelector("#dateOfBirth").value = jobDetail.dateOfBirth;
+        document.querySelector("#mobileNo").value = jobDetail.mobileNo;
     })
     .catch(err => console.error(err));
 }
@@ -31,21 +31,21 @@ event.preventDefault();
     let rev = document.querySelector("#rev").value;
     let email = document.querySelector("#email").value;
     let name = document.querySelector("#name").value;
-    let keyskills = document.querySelector("#keyskills").value;
+    let keySkills = document.querySelector("#keySkills").value;
     let education = document.querySelector("#education").value;
     let resume = document.querySelector("#resume").value;
-    let dateofbirth = document.querySelector("#dateofbirth").value;
-    let mobileno = document.querySelector("#mobileno").value;
+    let dateOfBirth = document.querySelector("#dateOfBirth").value;
+    let mobileNo = document.querySelector("#mobileNo").value;
 let modifyDetails = {
         "_id": id,
         "_rev": rev ,  
         "email": email,      
         "name":name,
-        "keyskills":keyskills,
+        "keySkills":keySkills,
         "education":education,
         "resume":resume,
-        "dateofbirth":dateofbirth,
-        "mobileno":mobileno
+        "dateOfBirth":dateOfBirth,
+        "mobileNo":mobileNo
         }
     console.log(modifyDetails);
     const dbUsername='apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';

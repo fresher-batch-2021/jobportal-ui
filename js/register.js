@@ -36,16 +36,12 @@ else{
 UserService.register(registerObj).then(res =>{
  let data=res.data;
     console.log(data);
-    // alert(data)
-    // alert("Registration is successful");
-    // window.location.href="login.html";
     toastr.success("Registration successful");
       setTimeout(function () {
       window.location.href='login.html'
         }, 1500);
    }).catch(err=>{
            console.error(err.response);
-          //  alert("Unable to register");
           toastr.error("Unable to register");
    });
    

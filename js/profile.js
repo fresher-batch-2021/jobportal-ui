@@ -13,7 +13,7 @@ function getProfileData(){
     selector: {
       email: email
       },
-    fields: ["_id", "_rev", "email", "name","mobileno","education","keyskills"]
+    fields: ["_id", "_rev", "email", "name","mobileNo","education","keySkills"]
   };
   console.log(requestData); //for our verification
   axios.post(url, requestData, {headers: { Authorization: basicAuth },}).then(res=>{
@@ -25,9 +25,9 @@ function getProfileData(){
   content += `<tr>
   <td>${Obj.email}</td> 
   <td>${Obj.name}</td> 
-  <td>${Obj.mobileno}</td>       
+  <td>${Obj.mobileNo}</td>       
   <td>${Obj.education}</td>
-  <td>${Obj.keyskills}</td>
+  <td>${Obj.keySkills}</td>
   <td><a href='edit.html?id=${Obj._id}'>Edit</a></td>
    `;             
   document.querySelector("#list-jobs").innerHTML = content;

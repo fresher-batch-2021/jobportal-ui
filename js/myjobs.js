@@ -18,7 +18,9 @@ function displayJobs(email) {
         content += `<tr>
         <td>${Obj.companyName}</td>       
         <td>${Obj.skills}</td>
-        <td>${Obj.status}</td></tr>
+        <td>${Obj.appliedDate}</td>
+        <td>${Obj.status}</td>
+        </tr>
         `;
     }
     document.querySelector("#list-jobs").innerHTML = content;

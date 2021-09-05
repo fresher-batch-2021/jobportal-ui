@@ -7,26 +7,25 @@ function employee() {
     "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills";
   const email = document.querySelector("#email").value;
   const name = document.querySelector("#name").value;
-  const keyskills = document.querySelector("#keyskills").value;
+  const keySkills = document.querySelector("#keySkills").value;
   const education = document.querySelector("#education").value;
   const resume = document.querySelector("#myFile").value;
-  const dateofbirth = document.querySelector("#dateofbirth").value;
-  const mobileno = document.querySelector("#mobileno").value;
-  if (mobileno.length > 10) {
+  const dateOfBirth = document.querySelector("#dateOfBirth").value;
+  const mobileNo = document.querySelector("#mobileNo").value;
+  if (mobileNo.length > 10) {
     toastr.error('Please enter the 10 digit mobile no');
-    // window.alert("Please enter the 10 digit mobile no");
   }
   else
   {
-  console.log(email +" " +name +" " +keyskills +"" +education +"" +dateofbirth +"" +mobileno);
+  console.log(email +" " +name +" " +keySkills +"" +education +"" +dateOfBirth +"" +mobileNo);
   let userobj = {
     email: email,
     name: name,
-    keyskills: keyskills,
+    keySkills: keySkills,
     education: education,
     resume: resume,
-    dateofbirth: dateofbirth,
-    mobileno: mobileno,
+    dateOfBirth: dateOfBirth,
+    mobileNo: mobileNo,
   };
   console.log(basicAuth);
   axios
@@ -60,8 +59,6 @@ function myFunction() {
         var file = x.files[i];
         if ("name" in file) {
           txt += "name: " + file.name + "<br>";
-          // alert(file.name);
-          // console.log(file.name);
           fileName = file.name;
         }
         if ("size" in file) {
@@ -82,6 +79,6 @@ function myFunction() {
 }
 function setDate() {
   let today = new Date().toJSON().substr(0, 10);
-  document.querySelector("#dateofbirth").setAttribute("max", today);
+  document.querySelector("#dateOfBirth").setAttribute("max", today);
 }
 setDate()

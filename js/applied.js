@@ -5,7 +5,7 @@ function appliedSpec() {
             let value = res.data;
             toastr.success("job Applied successfully");
             console.log(value);
-            const name = value.companyname;
+            const name = value.companyName;
             const img_url = value.imageUrl;
             const skills = value.skills;
             const appliedJobs=value.appliedJobs;
@@ -17,7 +17,10 @@ function appliedSpec() {
             // adding datas in array
             let addJobs=userObj.appliedJobs;
             let jobs=addJobs !=null ?addJobs:[];
-            jobs.push({companyName:name,skills:skills,status:"Applied"});
+            let date = new Date().toJSON(); 
+            let appliedDate = moment(new Date(date)).format("DD-MM-YYYY");
+            console.log(appliedDate);
+            jobs.push({companyName:name,skills:skills,appliedDate:appliedDate,status:"Applied"});
             userObj.appliedJobs=jobs
             localStorage.setItem("userObj",JSON.stringify(userObj));
             let updateUserObj=JSON.parse(localStorage.getItem("userObj"))
