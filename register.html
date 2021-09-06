@@ -15,7 +15,7 @@
 <form onsubmit="register()">
 <div class="form-box">
 <h1>Register Form</h1>
-<input placeholder="Your Name" type="text" id="name"required pattern="[a-zA-Z]{1,32}" title="name must be an alphabet"> 
+<input placeholder="Your Name" type="text" id="name"required pattern="[a-zA-Z]{1,32}" title="name must be an alphabet" autocomplete="off"> 
 <input placeholder="Your Email Address" type="email" id="email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com" autocomplete="off">  
 <input placeholder="Your Password" type="password" id="password"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" > 
