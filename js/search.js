@@ -16,6 +16,7 @@ item.classList.add('hide')
 function getAllData(){
     UserService.getJobs().then(res=>{
         let value=res.data.rows;
+
         let results=value.map(Obj=>Obj.doc);
         results.forEach(user => {
             const li = document.createElement('li');

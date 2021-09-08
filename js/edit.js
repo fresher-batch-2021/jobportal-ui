@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $("#edit").submit(editDetails);
+    });
 function editDetails() {
 const queryString = window.location.search;
 console.log(queryString);
@@ -9,30 +12,30 @@ console.log(id);
             console.log(res.data);
         const jobDetail = res.data;
         console.log(jobDetail)
-        document.querySelector("#id").value = jobDetail._id;
-        document.querySelector("#rev").value = jobDetail._rev;
-        document.querySelector("#email").value = jobDetail.email;
-        document.querySelector("#name").value = jobDetail.name;
-        document.querySelector("#keySkills").value = jobDetail.keySkills;
-        document.querySelector("#education").value = jobDetail.education;
-        document.querySelector("#resume").value = jobDetail.resume;
-        document.querySelector("#dateOfBirth").value = jobDetail.dateOfBirth;
-        document.querySelector("#mobileNo").value = jobDetail.mobileNo;
+        $("#id").val(jobDetail._id);
+        $("#rev").val(jobDetail._rev);
+        $("#email").val(jobDetail.email);
+        $("#name").val(jobDetail.name);
+        $("#keySkills").val(jobDetail.keySkills);
+        $("#education").val(jobDetail.education);
+        $("#resume").val(jobDetail.resume);
+        $("#dateOfBirth").val(jobDetail.dateOfBirth);
+        $("#mobileNo").val(jobDetail.mobileNo);
     })
     .catch(err => console.error(err));
 }
 
 function modifyDetails(){
 event.preventDefault();
-    const id = document.querySelector("#id").value;
-    const rev = document.querySelector("#rev").value;
-    const email = document.querySelector("#email").value;
-    const name = document.querySelector("#name").value;
-    const keySkills = document.querySelector("#keySkills").value;
-    const education = document.querySelector("#education").value;
-    const resume = document.querySelector("#resume").value;
-    const dateOfBirth = document.querySelector("#dateOfBirth").value;
-    const mobileNo = document.querySelector("#mobileNo").value;
+    const id =$("#id").val();
+    const rev = $("#rev").val();
+    const email = $("#email").val();
+    const name = $("#name").val();
+    const keySkills =$("#keySkills").val();
+    const education = $("#education").val();
+    const resume = $("#resume").val();
+    const dateOfBirth =$("#dateOfBirth").val();
+    const mobileNo = $("#mobileNo").val();
 let modifyDetails = {
         "_id": id,
         "_rev": rev ,  

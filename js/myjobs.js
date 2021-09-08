@@ -4,6 +4,7 @@ function displayJobs(email) {
     console.log(res.data.docs[0])
     let details=res.data.docs[0].appliedJobs;
     for(let Obj of details){
+        $("#list-jobs tbody").empty();
         content += `<tr>
         <td>${Obj.companyName}</td>       
         <td>${Obj.skills}</td>
@@ -11,8 +12,9 @@ function displayJobs(email) {
         <td>${Obj.status}</td>
         </tr>
         `;
+        $("#list-jobs tbody").append(content);  
     }
-    document.querySelector("#list-jobs").innerHTML = content;
+    
 }).catch(err=>console.error(err))
 console.log(content);
 }   

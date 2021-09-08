@@ -1,6 +1,7 @@
 function appliedSpec() {
+   
             const param = new URLSearchParams(window.location.search.substr(1));
-            let id = param.get("id");
+            let id = param.get("id");            
             jobService.findData(id).then(res => {
                 alert("job found")
             let value = res.data;

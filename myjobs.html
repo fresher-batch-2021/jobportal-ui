@@ -8,7 +8,8 @@
     <title>Myjob</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
     
   
 </head>  
@@ -16,7 +17,7 @@
     <a href="index.html">
     <img class="navbarimg" src="images/logo.jpg" alt="logo"/></a>
     <div class="form-box">
-    <table id="table">
+    <table id="list-jobs">
         <caption>My Jobs</caption>
     <thead>
     <tr>
@@ -25,12 +26,13 @@
     <th id="header">Date</th>
     <th id="header">Status</th> </tr>
     </thead>
-    <tbody id="list-jobs">
+    <tbody >
     </tbody>
     </table>
     <p class="backlink"><a href="index.html">Back</a></p>
     </div>
     <script src="js/route.js"></script>
+    <script src="js/environment.js"></script>
     <script src="js/service.js"></script>
     <script src="js/myjobs.js"></script>
 </body>

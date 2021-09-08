@@ -1,7 +1,12 @@
+$(document).ready(function(){
+$("#login").submit(login);
+});
 function login() {
   event.preventDefault();
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
+  // const email = document.querySelector("#email").value;
+  // const password = document.querySelector("#password").value;
+  const email= $("#email").val();
+  const password =$("#password").val();
   if (email == null || email.trim() == "") {
     toastr.error("invalid email");
   } else {

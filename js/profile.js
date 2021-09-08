@@ -14,6 +14,8 @@ function getProfileData(){
   localStorage.setItem("profileData",JSON.stringify(res.data.docs[0]))
   let content="";
   let Obj=res.data.docs[0];
+  $("#list-jobs tbody").empty();
+
   content += `<tr>
   <td>${Obj.email}</td> 
   <td>${Obj.name}</td> 
@@ -22,7 +24,7 @@ function getProfileData(){
   <td>${Obj.keySkills}</td>
   <td><a href='edit.html?id=${Obj._id}'>Edit</a></td>
    `;             
-  document.querySelector("#list-jobs").innerHTML = content;
+  $("#list-jobs tbody").append(content);
   }).catch(err=>{
           console.error(err)
   })
