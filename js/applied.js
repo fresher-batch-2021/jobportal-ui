@@ -1,7 +1,8 @@
 function appliedSpec() {
-           const param = new URLSearchParams(window.location.search.substr(1));
-        let Id = param.get("id");
-        UserService.findData(Id).then(res => {
+            const param = new URLSearchParams(window.location.search.substr(1));
+            let id = param.get("id");
+            jobService.findData(id).then(res => {
+                alert("job found")
             let value = res.data;
             toastr.success("job Applied successfully");
             console.log(value);
@@ -11,15 +12,20 @@ function appliedSpec() {
             const appliedJobs=value.appliedJobs;
             let usr=JSON.parse(localStorage.getItem("userObj"));
             console.log(usr._id)
+            alert(usr._id)
             UserService.getRegisterData(usr._id).then(res=>{
+                alert("data got")
             console.log("yesh",res.data);
             let userObj=res.data;
+
             // adding datas in array
             let addJobs=userObj.appliedJobs;
             let jobs=addJobs !=null ?addJobs:[];
             let date = new Date().toJSON(); 
             let appliedDate = moment(new Date(date)).format("DD-MM-YYYY");
             console.log(appliedDate);
+
+            //push the values in appliedJobs array
             jobs.push({companyName:name,skills:skills,appliedDate:appliedDate,status:"Applied"});
             userObj.appliedJobs=jobs
             localStorage.setItem("userObj",JSON.stringify(userObj));

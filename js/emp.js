@@ -1,56 +1,50 @@
-function employee() {
+function employeeDetails() {
   event.preventDefault();
-  const dbUsername = "apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9";
-  const dbPassword = "532b6c43f03b7016261e7a66b65a2648";
-  const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
-  const url =
-    "https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills";
+  
   const email = document.querySelector("#email").value;
   const name = document.querySelector("#name").value;
   const keySkills = document.querySelector("#keySkills").value;
   const education = document.querySelector("#education").value;
-  const resume = document.querySelector("#myFile").value;
+  const resume = document.querySelector("#file").value;
   const dateOfBirth = document.querySelector("#dateOfBirth").value;
   const mobileNo = document.querySelector("#mobileNo").value;
-  if (mobileNo.length > 10) {
+  if (mobileNo.length != 10) {
     toastr.error('Please enter the 10 digit mobile no');
   }
   else
   {
+    let userobj = {
+      email: email,
+      name: name,
+      keySkills: keySkills,
+      education: education,
+      resume: resume,
+      dateOfBirth: dateOfBirth,
+      mobileNo: mobileNo,
+    };
   console.log(email +" " +name +" " +keySkills +"" +education +"" +dateOfBirth +"" +mobileNo);
-  let userobj = {
-    email: email,
-    name: name,
-    keySkills: keySkills,
-    education: education,
-    resume: resume,
-    dateOfBirth: dateOfBirth,
-    mobileNo: mobileNo,
-  };
-  console.log(basicAuth);
-  axios
-    .post(url, userobj, { headers: { Authorization: basicAuth } })
-    .then((res) => {
+ 
+  console.log(userobj);
+  
+  jobportalService.employeeData(userobj).then((res) => {
       console.log(res);
       toastr.success("Your Response Saved Successful");
       setTimeout(function () {
       window.location.href='index.html'
         }, 1500);
-      // alert("YOUR RESPONSE SAVED SUCCESSFULL");
-      // window.location.href = "index.html";
+     
     })
     .catch((err) => {
       console.error(err.response.data);
       toastr.error('Unable to register');
-      // alert("Unable to register");
+     
     });}
 }
-function myFunction() {
+function fileUpload() {
   let fileName = "";
-  var x = document.getElementById("myFile");
+  var x = document.getElementById("file");
   var txt = "";
   if ("files" in x) {
-    // alert(x);
     if (x.files.length == 0) {
       txt = "Select one or more files.";
     } else {
@@ -74,7 +68,7 @@ function myFunction() {
       txt += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead.
     }
   }
-  document.getElementById("demo").innerHTML = txt;
+  document.getElementById("file").innerHTML = txt;
   return fileName;
 }
 function setDate() {

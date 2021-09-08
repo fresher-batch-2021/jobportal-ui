@@ -20,27 +20,42 @@ static updateData(id,rev,obj){
 const url=`https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register/${id}?rev=${rev}`;
     return axios.put(url,obj,{headers:{Authorization:basicAuth}});
 }
-static findData(id){
-    const url=`https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobs/${id}`;
-    return axios.get(url,{headers:{Authorization:basicAuth}});
-}
+
 static register(registerObj) {
     const url ="https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register";
     console.log(basicAuth);
     return axios.post(url, registerObj, {headers: { Authorization: basicAuth }
     });
   }
+
+
+  static getRegisterData(id){
+      enviroment.endpoint
+    const url=endpoint+'register/'+id;
+   return axios.get(url,{headers:{Authorization:basicAuth}});
+    }
+
+
 static getAllData(db){
      const url=endpoint+db+"/_all_docs?include_docs=true";
      return axios.get(url,{headers:{Authorization:basicAuth}});
 }
-static getRegisterData(id){
-     const url=endpoint+"register/"+id;
-    return axios.get(url,{headers:{Authorization:basicAuth}});
-     }
+
 static getJobs(){
     let allData= this.getAllData("jobs");
    return allData;
    }
 
+
+static jobService(email){
+    const url="https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/register/_find"
+    let requestData=
+    {
+        selector:{
+        email:email
+        },
+    fields:["appliedJobs"]
+};
+   return axios.post(url,requestData,{ headers: { Authorization: basicAuth } })
+}
 }

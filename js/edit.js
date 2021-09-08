@@ -1,14 +1,11 @@
 function editDetails() {
-    const queryString = window.location.search;
+const queryString = window.location.search;
 console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 console.log(id);
-    const dbUsername='apikey-v2-a160c2y9h57djbakjap0yesqvh8yvuecd47paczd8l9';
-    const dbPassword='532b6c43f03b7016261e7a66b65a2648';
-    const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
-    const url = `https://69ba05e4-6d14-4d5f-8640-ee67170e853f-bluemix.cloudantnosqldb.appdomain.cloud/jobportal_skills/${id}`;
-        axios.get(url,  {headers:{Authorization:basicAuth}}).then(res=>{
+   
+    jobportalService.editService(id).then(res=>{
             console.log(res.data);
         const jobDetail = res.data;
         console.log(jobDetail)
@@ -27,15 +24,15 @@ console.log(id);
 
 function modifyDetails(){
 event.preventDefault();
-    let id = document.querySelector("#id").value;
-    let rev = document.querySelector("#rev").value;
-    let email = document.querySelector("#email").value;
-    let name = document.querySelector("#name").value;
-    let keySkills = document.querySelector("#keySkills").value;
-    let education = document.querySelector("#education").value;
-    let resume = document.querySelector("#resume").value;
-    let dateOfBirth = document.querySelector("#dateOfBirth").value;
-    let mobileNo = document.querySelector("#mobileNo").value;
+    const id = document.querySelector("#id").value;
+    const rev = document.querySelector("#rev").value;
+    const email = document.querySelector("#email").value;
+    const name = document.querySelector("#name").value;
+    const keySkills = document.querySelector("#keySkills").value;
+    const education = document.querySelector("#education").value;
+    const resume = document.querySelector("#resume").value;
+    const dateOfBirth = document.querySelector("#dateOfBirth").value;
+    const mobileNo = document.querySelector("#mobileNo").value;
 let modifyDetails = {
         "_id": id,
         "_rev": rev ,  

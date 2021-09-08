@@ -2,7 +2,7 @@ function login() {
   event.preventDefault();
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  if (email == "" || email == null || email.trim() == "") {
+  if (email == null || email.trim() == "") {
     toastr.error("invalid email");
   } else {
     if (password.trim() != "") {

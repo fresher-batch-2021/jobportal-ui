@@ -11,22 +11,23 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
 </head>
 <body>
-  <form onsubmit="employee()">
+  <form onsubmit="employeeDetails()">
   <div class="form-box">
   <div class="header-text">
     Employee Details
   </div>
   <input placeholder="Your Email Address" type="email" id="email"required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com">
-  <input placeholder="Your Name" type="text" id="name" required>
+  <input placeholder="Your Name" type="text" id="name" autocomplete="off" required>
   <input placeholder="KeySkills" type="text" id="keySkills" required>
-  <input placeholder="Education" type="text" id="education" required>
-  <input placeholder="Date_of_Birth" type="date" id="dateOfBirth" required>
-  <input placeholder="MobileNo" type="text" id="mobileNo" required>
-  <input type="file" id="myFile" multiple size="50" onchange="myFunction()"required>
+  <input placeholder="Education" type="text" id="education" autocomplete="off" required>
+  <input placeholder="DateofBirth" type="date" id="dateOfBirth" required>
+  <input placeholder="MobileNo" type="number" id="mobileNo" autocomplete="off" required>
+  <input type="file" id="file" multiple size="50" onchange="fileUpload()"required>
   <button>submit</button><a style="color: white;" href="index.html">back</a></p>
   </div>
   </form>
   <script src="js/route.js"></script>
+  <script src="js/jobportalservice.js"></script>
   <script src="js/emp.js"></script>
 </body>
 </html>
