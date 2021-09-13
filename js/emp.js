@@ -3,13 +3,6 @@ $(document).ready(function(){
   });
 function employeeDetails() {
   event.preventDefault();  
-  // const email = document.querySelector("#email").value;
-  // const name = document.querySelector("#name").value;
-  // const keySkills = document.querySelector("#keySkills").value;
-  // const education = document.querySelector("#education").value;
-  // const resume = document.querySelector("#file").value;
-  // const dateOfBirth = document.querySelector("#dateOfBirth").value;
-  // const mobileNo = document.querySelector("#mobileNo").value;
   const email = $("#email").val();
   const name = $("#name").val();
   const keySkills = $("#keySkills").val();

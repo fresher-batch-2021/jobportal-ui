@@ -11,8 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+   
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
@@ -20,7 +19,8 @@
 </head>
 <body>
     <h1 class="formHead">Edit Skills</h1>
-    <form id="edit" method="POST">
+    <form id="editSkills" method="POST">
+
     <input type="hidden" id="id" readonly>
     <input type="hidden" id="rev" readonly>
 
@@ -45,12 +45,15 @@
     <label for="mobileNo">MobileNo</label><br>
     <input  type="number" id="mobileNo"readonly><br>
     
-    <button class="formButton" onclick="modifyDetails()" id="edit" value="Update">Update</button>
+    <button class="formButton" type="submit" id="edit" >Update</button>
+
     <a href="profile.html">back</a></td>
     </form>
-     <script src="js/route.js"></script>
-     <script src="js/environment.js"></script>
-     <script src="js/jobportalservice.js"></script>
+    <script src="js/route.js"></script>
+    <script src="js/environment.js"></script>
+    <script src="js/jobportalservice.js"></script>
     <script src="js/edit.js"></script>
+    
+    
 </body>
 </html>

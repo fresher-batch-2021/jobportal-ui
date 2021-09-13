@@ -18,6 +18,12 @@ class jobportalService{
           fields: ["_id", "_rev", "email", "name","mobileNo","education","keySkills"]
         };
         console.log(requestData); 
-        return axios.post(url, requestData, {headers: { Authorization: basicAuth },})
+        return axios.post(url, requestData, {headers: { Authorization: basicAuth }})
+    }
+
+
+    static editSkills(modifyDetails){   
+      const url = endpoint+`jobportal_skills/${modifyDetails._id}?rev=${modifyDetails._rev}`;
+      return axios.put(url, modifyDetails, {headers:{'Authorization':basicAuth}});
     }
 }
