@@ -8,6 +8,7 @@ const routes = [
     { path: "applied.html",roles:["USER"] },
     {path:"myjobs.html",roles:["USER"]},
     {path:"edit.html",roles:["USER"]},
+    {path:"faq.html",roles:["USER"]},
 
 ];
 

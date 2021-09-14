@@ -3,8 +3,7 @@ $("#login").submit(login);
 });
 function login() {
   event.preventDefault();
-  // const email = document.querySelector("#email").value;
-  // const password = document.querySelector("#password").value;
+ 
   const email= $("#email").val();
   const password =$("#password").val();
   if (email == null || email.trim() == "") {
@@ -16,7 +15,7 @@ function login() {
           let data = res.data.docs;
           console.log(data);
     if(data.length==0){
-      toastr.error('invalid password');
+      toastr.error(ErrorMessage.INVALID_PASSWORD);
       setTimeout(function () {
       window.location.href='register.html'
       }, 1500);
@@ -40,12 +39,12 @@ function login() {
             alert(err.response.data.errormessage);
           } else {
             toastr.error("Login failed");
-            // alert("Login failed");
+            
           }
     });
     } else {
       toastr.error("Password  cannot be blanked");
-      // alert("Password  cannot be blanked");
+     
     }
   }
 }

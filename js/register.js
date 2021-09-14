@@ -32,7 +32,7 @@ else{
       console.log(registerObj);
       let exists = res;
       if (exists) {
-          toastr.error("", "This email Id is already exists",//if its true it is an error
+          toastr.error("", ErrorMessage.MAIL_ALREADY_EXIST,//if its true it is an error
               {
                   preventDuplicate: true
               });
