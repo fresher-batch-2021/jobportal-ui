@@ -44,7 +44,7 @@ function appliedSpec() {
             <h5><button><a href="index.html">back</a></button></h5>
              
             `;
-            document.querySelector(".company").innerHTML = content;
+            $(".company").html(content);
     
         }).catch(err => {
             alert("failed on getting data");
