@@ -7,7 +7,7 @@ function login() {
   const email= $("#email").val();
   const password =$("#password").val();
   if (email == null || email.trim() == "") {
-    toastr.error("invalid email");
+    toastr.error(ErrorMessage.INVALID_EMAIL);
   } else {
     if (password.trim() != "") {
       UserService.login(email, password)
@@ -43,7 +43,7 @@ function login() {
           }
     });
     } else {
-      toastr.error("Password  cannot be blanked");
+      toastr.error(ErrorMessage.PASSWORD_CANNOT_BLANK);
      
     }
   }

@@ -3,22 +3,18 @@ $(document).ready(function(){
   });
 function register() {
 event.preventDefault();
-  // const name = document.querySelector("#name").value;
-  // const email = document.querySelector("#email").value;
-  // const password = document.querySelector("#password").value;
-  // const confirmpassword = document.querySelector("#confirmpassword").value;
   const name= $("#name").val();
   const email= $("#email").val();
   const password =$("#password").val();
   const confirmPassword= $("#confirmPassword").val();
 if(email==""||email==null||email.trim()==""){
   toastr.error("invalid name");
-      //  alert("invalid name");
+     
    }
 else 
    if(password != confirmPassword){
-    toastr.error("Password mismatch");
-      //  alert("Password mismatch ");
+    toastr.error(ErrorMessage.PASSWORD_CONFIRMPASSWORD_SHOULD_MATCH);
+      
   }
 else{
     let registerObj={
